@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/nav_home">
+
+
+    <!--    <include app:graph="@navigation/nav_home" />-->
+    <!--    <include app:graph="@navigation/nav_knowledge_system" />-->
+
+
+    <navigation
+        android:id="@+id/nav_home"
+        app:startDestination="@id/home">
+        <fragment
+            android:id="@+id/home"
+            android:name="com.vurtnewk.play.ui.main.HomeFragment"
+            tools:layout="@layout/fragment_home" />
+        <action
+            android:id="@+id/action_global_login"
+            app:destination="@id/login" />
+    </navigation>
+
+    <navigation
+        android:id="@+id/nav_knowledge_system"
+        app:startDestination="@id/knowledge_system">
+        <fragment
+            android:id="@+id/knowledge_system"
+            android:name="com.vurtnewk.play.ui.main.KnowledgeSystemFragment"
+            tools:layout="@layout/fragment_knowledge_system">
+            <action
+                android:id="@+id/action_knowledge_system_to_knowledgeSystemListFragment"
+                app:destination="@id/knowledgeSystemListFragment" />
+        </fragment>
+
+        <fragment
+            android:id="@+id/knowledgeSystemListFragment"
+            android:name="com.vurtnewk.play.ui.KnowledgeSystemListFragment"
+            android:label="KnowledgeSystemListFragment"
+            tools:layout="@layout/fragment_knowledge_system_list" />
+    </navigation>
+
+    <navigation
+        android:id="@+id/nav_public_number"
+        app:startDestination="@id/public_number">
+        <fragment
+            android:id="@+id/public_number"
+            android:name="com.vurtnewk.play.ui.main.PublicNumberFragment"
+            tools:layout="@layout/fragment_knowledge_system" />
+    </navigation>
+
+    <navigation
+        android:id="@+id/nav_project"
+        app:startDestination="@id/project">
+        <fragment
+            android:id="@+id/project"
+            android:name="com.vurtnewk.play.ui.main.ProjectFragment"
+            tools:layout="@layout/fragment_knowledge_system" />
+    </navigation>
+
+    <fragment
+        android:id="@+id/login"
+        android:name="com.vurtnewk.play.ui.LoginFragment"
+        tools:layout="@layout/fragment_login" />
+
+</navigation>

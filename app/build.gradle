@@ -1,0 +1,68 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+def androidVersion = rootProject.ext.android
+def androidX = rootProject.ext.androidX
+
+android {
+    compileSdk androidVersion.compileSdk
+
+    defaultConfig {
+        applicationId "com.vurtnewk.play"
+        minSdk androidVersion.minSdk
+        targetSdk androidVersion.targetSdk
+        versionCode androidVersion.versionCode
+        versionName androidVersion.versionName
+
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildFeatures {
+        dataBinding true
+        viewBinding true
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    androidX.each {
+        implementation it.value
+    }
+
+    rootProject.ext.testLib.each {
+        testImplementation it.value
+    }
+
+    rootProject.ext.androidTestLib.each {
+        androidTestImplementation it.value
+    }
+
+    rootProject.ext.debugLib.each {
+        debugImplementation it.value
+    }
+
+    rootProject.ext.otherLib.each {
+        debugImplementation it.value
+    }
+
+    rootProject.ext.kapt.each{
+        kapt it.value
+    }
+}

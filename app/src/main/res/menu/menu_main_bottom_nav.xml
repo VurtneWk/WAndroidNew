@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/nav_home"
+        android:icon="@drawable/ic_bottom_home"
+        android:title="@string/home" />
+
+    <item
+        android:id="@+id/nav_knowledge_system"
+        android:icon="@drawable/ic_bottom_knowledge_system"
+        android:title="@string/knowledge_system" />
+
+    <item
+        android:id="@+id/nav_public_number"
+        android:icon="@drawable/ic_bottom_public_number"
+        android:title="@string/public_number" />
+
+    <item
+        android:id="@+id/nav_project"
+        android:icon="@drawable/ic_bottom_project"
+        android:title="@string/project" />
+
+</menu>
